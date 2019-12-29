@@ -1940,7 +1940,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4594248001954802530}
-  - component: {fileID: 4594248001954802845}
   m_Layer: 9
   m_Name: Cat
   m_TagString: Untagged
@@ -1971,25 +1970,6 @@ Transform:
   m_Father: {fileID: 1748531468884475403}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!95 &4594248001954802845
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4594248001954802844}
-  m_Enabled: 1
-  m_Avatar: {fileID: 9000000, guid: 934bc7be10d4142149105984a168afa0, type: 3}
-  m_Controller: {fileID: 0}
-  m_CullingMode: 1
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &4594248001983528356
 GameObject:
   m_ObjectHideFlags: 0
@@ -2494,6 +2474,8 @@ GameObject:
   - component: {fileID: 3822760096186165363}
   - component: {fileID: 7089415801417686840}
   - component: {fileID: 1412442226344992640}
+  - component: {fileID: 2375288357369778021}
+  - component: {fileID: 3020060359434855121}
   m_Layer: 9
   m_Name: Player
   m_TagString: Player
@@ -2743,12 +2725,12 @@ MonoBehaviour:
   syncInterval: 0.1
   weapon:
     name: Squirt Gun
-    damage: 10
+    damage: 40
     range: 100
   cam: {fileID: 2172339555191167535}
   mask:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 1335
 --- !u!136 &7089415801417686840
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -2775,3 +2757,44 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fca273b054c824dc9aec82304b916c56, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  syncMode: 0
+  syncInterval: 0.1
+  maxHealth: 100
+  disableOnDeath:
+  - {fileID: 2965176775845142584}
+  - {fileID: 3822760096186165363}
+--- !u!95 &2375288357369778021
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8573102098404689842}
+  m_Enabled: 1
+  m_Avatar: {fileID: 9000000, guid: 934bc7be10d4142149105984a168afa0, type: 3}
+  m_Controller: {fileID: 9100000, guid: cfc2bfc8c7b484b08bb76db36f91145a, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &3020060359434855121
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8573102098404689842}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7f6f3bf89aa97405989c802ba270f815, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  syncMode: 0
+  syncInterval: 0.1
+  animator: {fileID: 2375288357369778021}
+  clientAuthority: 0
