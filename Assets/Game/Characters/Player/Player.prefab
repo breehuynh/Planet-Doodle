@@ -2544,8 +2544,10 @@ MonoBehaviour:
   speed: 5
   lookSensitivity: 3
   thrusterForce: 1600
-  jointMode: 1
-  jointSpring: 20
+  environmentMask:
+    serializedVersion: 2
+    m_Bits: 2048
+  jointSpring: 200
   jointMaxForce: 2
 --- !u!114 &6830967224006271450
 MonoBehaviour:

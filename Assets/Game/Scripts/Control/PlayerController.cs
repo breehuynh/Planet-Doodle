@@ -14,6 +14,9 @@ public class PlayerController : MonoBehaviour {
     [SerializeField]
     private float thrusterForce = 1000f;
 
+    [SerializeField]
+    private LayerMask environmentMask;
+
     [Header("Spring Settings:")]
     [SerializeField]
     private float jointSpring = 20f;
@@ -36,6 +39,19 @@ public class PlayerController : MonoBehaviour {
 
     void Update()
     {
+        //Setting target position for spring
+        //This makes the physics act right when it comes to
+        //applying gravity when flying over objects
+        RaycastHit _hit;
+        if (Physics.Raycast(transform.position, Vector3.down, out _hit, 100f, environmentMask))
+        {
+            joint.targetPosition = new Vector3(0f, -_hit.point.y, 0f);
+        }
+        else
+        {
+            joint.targetPosition = new Vector3(0f, 0f, 0f);
+        }
+
         // Calculate movement velocity as a 3D vector
         float _xMov = Input.GetAxis("Horizontal");
         float _zMov = Input.GetAxis("Vertical");
