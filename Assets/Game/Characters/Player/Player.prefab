@@ -2543,10 +2543,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 5
   lookSensitivity: 3
-  thrusterForce: 1300
+  thrusterForce: 1600
   jointMode: 1
   jointSpring: 20
-  jointMaxForce: 40
+  jointMaxForce: 2
 --- !u!114 &6830967224006271450
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2758,7 +2758,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   syncMode: 0
-  syncInterval: 0.5
+  syncInterval: 0.1
   maxHealth: 100
   disableOnDeath:
   - {fileID: 2965176775845142584}
@@ -2795,6 +2795,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   syncMode: 0
-  syncInterval: 0.5
+  syncInterval: 0.1
   animator: {fileID: 2375288357369778021}
   clientAuthority: 0
