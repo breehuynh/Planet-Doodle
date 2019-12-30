@@ -87,6 +87,7 @@ public class PlayerController : MonoBehaviour {
         }
 
         // Apply the thruster force
+        animator.SetBool("isFlying", _thrusterForce != Vector3.zero); 
         motor.ApplyThruster(_thrusterForce);
     }
 
