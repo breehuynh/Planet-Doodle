@@ -16,9 +16,6 @@ public class PlayerController : MonoBehaviour {
 
     [Header("Spring Settings:")]
     [SerializeField]
-    [System.Obsolete]
-    private JointDriveMode jointMode = JointDriveMode.Position;
-    [SerializeField]
     private float jointSpring = 20f;
     [SerializeField]
     private float jointMaxForce = 40f;
@@ -28,7 +25,6 @@ public class PlayerController : MonoBehaviour {
     private ConfigurableJoint joint;
     private Animator animator;
 
-    [System.Obsolete]
     void Start()
     {
         motor = GetComponent<PlayerMotor>();
@@ -38,7 +34,6 @@ public class PlayerController : MonoBehaviour {
         SetJointSettings(jointSpring);
     }
 
-    [System.Obsolete]
     void Update()
     {
         // Calculate movement velocity as a 3D vector
@@ -91,11 +86,9 @@ public class PlayerController : MonoBehaviour {
         motor.ApplyThruster(_thrusterForce);
     }
 
-    [System.Obsolete]
     private void SetJointSettings(float _jointSpring)
     {
         JointDrive drive = new JointDrive();
-        drive.mode = jointMode;
         drive.positionSpring = _jointSpring;
         drive.maximumForce = jointMaxForce;
         joint.yDrive = drive;
