@@ -1,3 +1,3 @@
-# Toons vs Cogs
+# Planet Doodle
 
-This is a game where you can play either as a Toon or Cog and battle eachother!
+This is a battle royale game!
